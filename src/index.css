@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Centralized brand theme                                             */
+/* Change --brand-from / --brand-via / --brand-to to re-theme the      */
+/* whole app in one place: navbar brand text, hero heading highlight,  */
+/* and primary buttons all read from this single source.               */
+/* ------------------------------------------------------------------ */
+:root {
+  --brand-from: #f97316; /* orange */
+  --brand-via: #ec4899;  /* pink */
+  --brand-to: #8b5cf6;   /* violet */
+  --brand-gradient: linear-gradient(90deg, var(--brand-from) 0%, var(--brand-via) 55%, var(--brand-to) 100%);
+}
+
+@theme {
+  --color-ink: #0f1222;
+  --color-ink-soft: #4b5066;
+  --color-muted: #6b7280;
+  --color-hairline: #e7e8ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.brand-gradient-text {
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.brand-gradient-bg {
+  background-image: var(--brand-gradient);
+}
+
+/* Focus states -- keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--brand-via);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Toastify tweaks so toasts fit the design language */
+.Toastify__toast {
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}

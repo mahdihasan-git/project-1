@@ -47,7 +47,7 @@ export default function Footer() {
             </p>
             <div className="mt-4 flex items-center gap-4">
               {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-                
+                <a
                   key={label}
                   href={href}
                   target="_blank"

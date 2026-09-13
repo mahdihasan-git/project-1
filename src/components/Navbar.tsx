@@ -17,6 +17,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-hairline bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Mobile: hamburger on the left */}
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-md p-2 text-ink md:hidden"
@@ -28,17 +29,20 @@ export default function Navbar() {
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
+        {/* Desktop: brand on the left */}
         <div className="hidden md:block">
           <BrandLogo />
         </div>
 
+        {/* Mobile: brand centered */}
         <div className="md:hidden">
           <BrandLogo size="sm" />
         </div>
 
+        {/* Desktop: nav links centered */}
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
-            
+            <a
               key={link.href}
               href={link.href}
               className={`text-sm font-medium transition-colors hover:text-pink-600 ${
@@ -50,14 +54,15 @@ export default function Navbar() {
           ))}
         </nav>
 
+        {/* Right: auth actions (desktop + mobile) */}
         <div className="flex items-center gap-3 sm:gap-4">
-          
+          <a
             href="#sign-in"
             className="text-xs font-medium text-ink-soft transition-colors hover:text-ink sm:text-sm"
           >
             Sign In
           </a>
-          
+          <a
             href="#sign-up"
             className="brand-gradient-bg rounded-full px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-opacity hover:opacity-90 sm:px-5 sm:py-2 sm:text-sm"
           >

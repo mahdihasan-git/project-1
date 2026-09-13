@@ -15,13 +15,13 @@ export default function Hero() {
             side, and put together the stack that fits your next project.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            
+            <a
               href="#technologies"
               className="brand-gradient-bg rounded-lg px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-pink-200 transition-opacity hover:opacity-90"
             >
               Explore Technologies
             </a>
-            
+            <a
               href="#about"
               className="rounded-lg border border-hairline px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink-soft"
             >

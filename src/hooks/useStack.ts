@@ -18,16 +18,19 @@ export function useStack(): UseStackResult {
     [stack]
   );
 
-  const addToStack = useCallback((technology: Technology) => {
-    setStack((current) => {
-      if (current.some((tech) => tech.id === technology.id)) {
-        toast.warn(`${technology.name} is already in your stack.`);
-        return current;
-      }
-      toast.success(`${technology.name} added to your stack.`);
-      return [...current, technology];
-    });
-  }, []);
+  const addToStack = useCallback(
+    (technology: Technology) => {
+      setStack((current) => {
+        if (current.some((tech) => tech.id === technology.id)) {
+          toast.warn(`${technology.name} is already in your stack.`);
+          return current;
+        }
+        toast.success(`${technology.name} added to your stack.`);
+        return [...current, technology];
+      });
+    },
+    []
+  );
 
   const removeFromStack = useCallback((id: string) => {
     setStack((current) => {

@@ -23,7 +23,7 @@ export default function MobileMenu({ id, isOpen, links, onClose }: MobileMenuPro
         <ul className="flex flex-col gap-1 px-4 py-3">
           {links.map((link) => (
             <li key={link.href}>
-              
+              <a
                 href={link.href}
                 onClick={onClose}
                 className={`block rounded-md px-3 py-2.5 text-sm font-medium ${

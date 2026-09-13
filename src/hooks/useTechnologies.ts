@@ -7,6 +7,12 @@ interface UseTechnologiesResult {
   error: string | null;
 }
 
+/**
+ * Loads technology data from the local JSON file at runtime via fetch,
+ * rather than a static bundle import, so a genuine loading state exists.
+ * On local JSON this may only take a few milliseconds, but the
+ * loading -> success/error flow is real.
+ */
 export function useTechnologies(): UseTechnologiesResult {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [isLoading, setIsLoading] = useState(true);
